@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>To Do</title>
+   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="container">
+      <!-- ----- header ---- -->
+      
+      <header class="header">
+         <ul class="nav">
+            <li class="active" data-action="toDo">to do</li>
+            <li data-action="inProgress">in progress</li>
+            <li data-action="did">did</li>
+         </ul>
+      </header>
+      <!-- ----- form ------ -->
+
+      <div class="tool_bar"></div>
+
+      <!-- --------- toDo list ------- -->
+
+      <div class="toDo-list-wrapper">
+         <ul class="toDo-list"></ul>
+      </div>
+
+      <!-- ------- pagination ------ -->
+
+      <div class="pagination">
+         <div class="arrow-btn js-arrow-btn" data-arrow="prev">&#8636</div>
+         <ul class="pagination-items"></ul>
+         <div class="arrow-btn js-arrow-btn" data-arrow="next">&#8641</div>
+      </div>
+
+      <!-- ------ form to do------ -->
+
+      <div class="form_toDo js-form-toDo hidden">
+         <form name="itemCreateForm">
+            <input type="text" name="title" placeholder="title">
+            <textarea name="description" cols="30" rows="14" placeholder="description"></textarea>
+            <div class="form_buttons">
+               <button data-action="cancel">cancel</button>
+               <button data-action="add" type="submit">add</button>
+            </div>
+         </form>
+      </div>
+   </div>
+   <script src="./index.js" type="module"></script>
+</body>
+</html>

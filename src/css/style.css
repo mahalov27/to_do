@@ -1,0 +1,369 @@
+*{
+   margin: 0;
+   padding: 0;
+   line-height: 1em;
+   box-sizing: border-box;
+   font-family:'Abel', sans-serif;   
+}
+body {
+   background-color: rgb(74, 84, 97);
+}
+
+.container{
+   width: 900px;
+   height: 850px;
+   position: absolute;
+   border: 1px solid black;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   background-image: url('../images/bg.jpeg') ;
+   background-repeat: no-repeat;
+   background-size: cover;
+   filter: drop-shadow(15px 20px 10px rgba(0, 0, 0, 0.25));
+ }
+ 
+/*------ header------ */
+
+.header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 50px;
+   border-bottom: 1px  solid #000;
+   padding: 0 50px;
+   background:rgba(255,255,255, 0.5);
+   backdrop-filter: blur(5px);
+}
+.header ul{
+   display: flex;
+   list-style: none;
+}
+.header ul li{
+   margin-right: 50px;
+   cursor: pointer;
+   font-size: 20px;
+}
+.header ul li:hover{
+   color: red;
+   transition: 0.3s;
+}
+.active{
+   color:red;
+}
+
+/* ------ form ------ */
+
+.tool_bar{
+   overflow: hidden;
+   width: 100%;
+   height: 40px;
+}
+.tool_bar_item{
+   display: flex;
+   position:relative;
+   padding:5px;
+   animation: wievtoolbar 0.5s ease-out;
+}
+@keyframes wievtoolbar {
+   from {
+      opacity: 0;
+      left: 897px;
+   }
+
+   to {
+      opacity: 1;
+      left: 0px;
+   }
+}
+.tool_bar_item-todo{
+   justify-content:space-between;
+}
+.tool_bar_item-inprogress{
+   justify-content: center;
+}
+.button_add{
+   width: 250px;
+   height: 30px;
+   background: rgba(255, 255, 255, 0.8);
+   backdrop-filter: blur(5px);
+   border: 1px solid #000;
+   border-radius: 0.5em;
+   text-transform: uppercase;
+   cursor: pointer;
+}
+.button_add:hover{
+   background: rgba(255, 255, 255, 0.5);
+   transition: 0.3s;
+   color:red;
+   
+}
+.block_search{
+   display: flex;
+   align-items: center;
+   border: 1px solid #000;
+   border-radius: 0.5em;
+   background: rgba(255, 255, 255, 0.8);
+   backdrop-filter: blur(5px);
+   padding: 0 4px;
+   height: 30px;
+}
+.input_search{
+   height: 25px;
+   width: 250px;
+   background-color: transparent;
+   border: none;
+   outline: none;
+}
+.block_search img{
+   height: 20px;
+}
+
+/* ------  form toDo ------ */
+
+.form_toDo{
+   position: absolute;
+   border-radius: 0.5em;
+   background: rgba(000, 000, 000, 0.7);
+   backdrop-filter: blur(5px);
+   height: 790px;
+   width: 890px;
+   top: 54px;
+   left: 4px;
+   animation: wievForm 0.3s ease ;
+}
+@keyframes wievForm {
+   from {opacity: 0;}
+   to {opacity: 1;}
+}
+.form_toDo.hidden {
+   display:none;
+}
+.form_toDo.close{
+   animation: hiddenForm 0.3s ease;
+}
+@keyframes hiddenForm {
+   from { opacity: 1;}
+      to {opacity: 0;}
+}
+
+form{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   width: 400px;
+   height: 350px;
+   padding: 10px;
+   border-radius: 0.5em;
+   background: rgba(233, 229, 229, 0.3);
+}
+form input{
+   height: 30px;
+   border: 1px solid #000;
+   border-radius: 0.5em;
+   padding: 3px;
+   font-size: 20px;
+   outline: none;
+}
+form textarea{
+   border: 1px solid #000;
+   border-radius: 0.5em;
+   padding: 3px;
+   height: 250px;
+   resize: none;
+   font-size: 20px;
+   outline: none;
+}
+.form_buttons{
+   display: flex;
+   justify-content: space-between;
+}
+.form_buttons button{
+   width: 188px;
+   height: 30px;
+   border: 1px solid #000;
+   border-radius: 0.5em;
+   background: #fff;
+   text-transform: uppercase;
+   cursor: pointer;
+}
+.form_buttons button:hover{
+   background: #f7f7f7;
+   color:red;
+   transition: 0.3s;
+}
+
+/* ------- ToDoList ------ */
+
+.toDo-list-wrapper{
+   height: 650px;
+   width: 885px;
+   margin: 0 auto;
+}
+
+/* ------ ToDoList activeItmes */
+.toDo-list {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 40px;
+}
+.list-item{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   list-style: none;
+   width: 290px;
+   height: 300px;
+   background: rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(5px);
+   padding:10px;
+   margin: 0 2.5px 5px;
+   border: 1px solid #000;
+   border-radius: 0.5em;
+}
+.in-progress::before{
+   content: '';
+   position:absolute;
+   height: 10px;
+   width: 10px;
+   background-color: rgb(40, 241, 13);
+   border-radius: 50%;
+   left: 61%;
+   top: 83%
+}
+.list-item-title {
+   display: flex;
+   justify-content: space-between;
+   height: 55px;
+}
+.list-item-title p {
+   color: red;
+   font-size: 15px;
+}
+.list-item-description{
+   height: 175px;
+   font-size: 18px;
+}
+.list-item div button{
+   height: 40px;
+   width: 85px;
+   border:1px solid #000;
+   background-color: #fff;
+   border-radius: 0.5em;
+   font-size: 20px;
+}
+.delete-btn:hover{
+   background-color: #f7f7f7;
+   color: red;
+   transition: 0.3s;
+   cursor: pointer;
+}
+.complete-btn:hover {
+   background-color: #f7f7f7;
+   color: rgb(9, 255, 0);
+   transition: 0.3s;
+   cursor: pointer;
+}
+.in-progress-btn:hover{
+   background-color: #f7f7f7;
+   color: rgb(0, 153, 255);
+   transition: 0.3s;
+   cursor: pointer;
+}
+
+/* ------ ToDo list didItems ----- */
+
+.list-item-did{
+   display: flex;
+   justify-content:space-between;
+   width: 100%;
+   height: 100px;
+   background: rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(5px);
+   border: 1px solid black;
+   border-radius: 0.5em;
+   list-style: none;
+   margin-bottom: 5px;
+}
+.list-item-did-text {
+   display: flex;
+   flex-direction: column;
+   justify-content:space-between;
+   padding: 10px;
+}
+.list-item-did-discription {
+   height: 45px;
+}
+.list-item-did button{
+   width: 80px;
+   height: 100%;
+   border: none;
+   border-left: 1px solid #000;
+   border-radius: 0.4em;
+   font-size: 20px;
+   cursor: pointer;
+}
+.list-item-did button:hover {
+   background-color: #f7f7f7;
+   color: red;
+   transition: 0.3s;
+   cursor: pointer;
+}
+
+/* ------- pagination ---- */
+
+.pagination {
+   display: none;
+   justify-content:space-between;
+   width: 600px;
+   margin: 0 auto;
+}
+.paginationActive {
+   display: flex;
+}
+.pagination ul{
+   display: flex;
+   list-style: none;
+}
+.pagination ul li{
+   display: flex;
+   height: 30px;
+   width: 30px;
+   border: 1px solid  transparent;
+   border-radius: 0.5em;
+   align-items: center;
+   justify-content: center;
+   margin: 0 10px;
+   cursor: pointer;
+}
+.pagination ul li.activePage {
+   border-color: red;
+   color: red;
+}
+.pagination ul li:hover {
+   border-color: red;
+   color: red;
+   transition: 0,5s;
+}
+.arrow-btn{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 25px;
+   height: 25px;
+   border: 1px solid transparent;
+   border-radius: 50%;
+   font-size: 20px;
+   cursor: pointer;
+}
+.arrow-btn:hover{
+   border-color: red;
+   color: red;
+   transition: 0,5s;
+}
