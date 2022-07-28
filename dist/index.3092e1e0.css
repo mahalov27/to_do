@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Abel, sans-serif;
+  line-height: 1em;
+}
+
+body {
+  background-color: #4a5461;
+}
+
+.container {
+  width: 900px;
+  height: 850px;
+  filter: drop-shadow(15px 20px 10px #00000040);
+  background-image: url("bg.71bd82a8.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #000;
+  margin-right: -50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  height: 50px;
+  backdrop-filter: blur(5px);
+  background: #ffffff80;
+  border-bottom: 1px solid #000;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  display: flex;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+}
+
+.header ul li {
+  cursor: pointer;
+  margin-right: 50px;
+  font-size: 20px;
+}
+
+.header ul li:hover {
+  color: red;
+  transition: all .3s;
+}
+
+.active {
+  color: red;
+}
+
+.tool_bar {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+}
+
+.tool_bar_item {
+  padding: 5px;
+  animation: wievtoolbar .5s ease-out;
+  display: flex;
+  position: relative;
+}
+
+@keyframes wievtoolbar {
+  from {
+    opacity: 0;
+    left: 897px;
+  }
+
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.tool_bar_item-todo {
+  justify-content: space-between;
+}
+
+.tool_bar_item-inprogress {
+  justify-content: center;
+}
+
+.button_add {
+  width: 250px;
+  height: 30px;
+  backdrop-filter: blur(5px);
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #fffc;
+  border: 1px solid #000;
+  border-radius: .5em;
+}
+
+.button_add:hover {
+  color: red;
+  background: #ffffff80;
+  transition: all .3s;
+}
+
+.block_search {
+  backdrop-filter: blur(5px);
+  height: 30px;
+  background: #fffc;
+  border: 1px solid #000;
+  border-radius: .5em;
+  align-items: center;
+  padding: 0 4px;
+  display: flex;
+}
+
+.input_search {
+  height: 25px;
+  width: 250px;
+  background-color: #0000;
+  border: none;
+  outline: none;
+}
+
+.block_search img {
+  height: 20px;
+}
+
+.form_toDo {
+  backdrop-filter: blur(5px);
+  height: 790px;
+  width: 890px;
+  background: #000000b3;
+  border-radius: .5em;
+  animation: wievForm .3s;
+  position: absolute;
+  top: 54px;
+  left: 4px;
+}
+
+@keyframes wievForm {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.form_toDo.hidden {
+  display: none;
+}
+
+.form_toDo.close {
+  animation: hiddenForm .3s;
+}
+
+@keyframes hiddenForm {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+form {
+  width: 400px;
+  height: 350px;
+  background: #e9e5e54d;
+  border-radius: .5em;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: -50%;
+  padding: 10px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form input {
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: .5em;
+  outline: none;
+  padding: 3px;
+  font-size: 20px;
+}
+
+form textarea {
+  height: 250px;
+  resize: none;
+  border: 1px solid #000;
+  border-radius: .5em;
+  outline: none;
+  padding: 3px;
+  font-size: 20px;
+}
+
+.form_buttons {
+  justify-content: space-between;
+  display: flex;
+}
+
+.form_buttons button {
+  width: 188px;
+  height: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: .5em;
+}
+
+.form_buttons button:hover {
+  color: red;
+  background: #f7f7f7;
+  transition: all .3s;
+}
+
+.toDo-list-wrapper {
+  height: 650px;
+  width: 885px;
+  margin: 0 auto;
+}
+
+.toDo-list {
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.list-item {
+  width: 290px;
+  height: 300px;
+  backdrop-filter: blur(5px);
+  background: #ffffff80;
+  border: 1px solid #000;
+  border-radius: .5em;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 2.5px 5px;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+}
+
+.in-progress:before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: #28f10d;
+  border-radius: 50%;
+  position: absolute;
+  top: 83%;
+  left: 61%;
+}
+
+.list-item-title {
+  height: 55px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.list-item-title p {
+  color: red;
+  font-size: 15px;
+}
+
+.list-item-description {
+  height: 175px;
+  font-size: 18px;
+}
+
+.list-item div button {
+  height: 40px;
+  width: 85px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: .5em;
+  font-size: 20px;
+}
+
+.delete-btn:hover {
+  color: red;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  transition: all .3s;
+}
+
+.complete-btn:hover {
+  color: #09ff00;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  transition: all .3s;
+}
+
+.in-progress-btn:hover {
+  color: #09f;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  transition: all .3s;
+}
+
+.list-item-did {
+  width: 100%;
+  height: 100px;
+  backdrop-filter: blur(5px);
+  background: #ffffff80;
+  border: 1px solid #000;
+  border-radius: .5em;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  list-style: none;
+  display: flex;
+}
+
+.list-item-did-text {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  display: flex;
+}
+
+.list-item-did-discription {
+  height: 45px;
+}
+
+.list-item-did button {
+  width: 80px;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  border-left: 1px solid #000;
+  border-radius: .4em;
+  font-size: 20px;
+}
+
+.list-item-did button:hover {
+  color: red;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  transition: all .3s;
+}
+
+.pagination {
+  width: 600px;
+  justify-content: space-between;
+  margin: 0 auto;
+  display: none;
+}
+
+.paginationActive {
+  display: flex;
+}
+
+.pagination ul {
+  list-style: none;
+  display: flex;
+}
+
+.pagination ul li {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border: 1px solid #0000;
+  border-radius: .5em;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  display: flex;
+}
+
+.pagination ul li.activePage {
+  color: red;
+  border-color: red;
+}
+
+.pagination ul li:hover {
+  color: red;
+  transition: 0, 5s;
+  border-color: red;
+}
+
+.arrow-btn {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: 1px solid #0000;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  display: flex;
+}
+
+.arrow-btn:hover {
+  color: red;
+  transition: 0, 5s;
+  border-color: red;
+}
+
+/*# sourceMappingURL=index.3092e1e0.css.map */
