@@ -12,7 +12,11 @@ const createToDoItems = () => {
 
   const toDoItem = {
     id: getId(toDos),
-    date: `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`,
+    date: `${date.getDate()}`.padStart(2, '0') +
+      '.' +
+      `${date.getMonth()}`.padStart(2, '0') +
+      '.' +
+      `${date.getFullYear()}`,,
     status: 'noStatus',
     title: titleOfTodo.value,
     description: descriptionOfTodo.value,
